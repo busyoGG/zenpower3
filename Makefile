@@ -2,6 +2,8 @@ VERSION         := 0.2.0
 TARGET          := $(shell uname -r)
 DKMS_ROOT_PATH  := /usr/src/zenpower-$(VERSION)
 
+KBUILD_CFLAGS   += -Wimplicit-fallthrough=3
+
 KERNEL_MODULES	:= /lib/modules/$(TARGET)
 
 ifneq ("","$(wildcard /usr/src/linux-headers-$(TARGET)/*)")
